@@ -6,20 +6,10 @@
   <div>
     <h1><a href='/'>Amanda's Blog</a></h1>
     </div>
-
-    <div>
-      <p>Published: 17 November 2018 14:53</p>
-      <h2><a href="">My First Post</a></h2>
-      <p>Porchetta ipsum kevin tempor. Excepteur andouille ball tip chuck porchetta irure capicola leberkas salami burgdoggen dolore ullamco dolore est.</p>
-    </div>
-
-    <div>
-      <p>Published 12 November 2018 10:17</p>
-      <h2><a href="">My Second Post</a></h2>
-      <p>Spicy jalapeno bacon ipsum dolor amet strip steak reprehenderit ea eu short loin velit, dolor landjaeger. Fugiat irure incididunt beef porchetta, t-bone ut tail enim bresaola nostrud duis veniam shank.</p>
-    </div>
-
-  <p>Hi there!</p>
-  <p>It works!</p>
-  </body>
-  </html>
+{% for post in posts %}
+  <div>
+    <p>Published: {{ post.published_date }}</p>
+    <h2><a href="">{{ post.title}}</a></h2>
+    <p>{{ post.text|linebreaksbr }}</p>
+  </div>
+{% endfor %}
